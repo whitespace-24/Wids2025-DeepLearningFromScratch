@@ -1,96 +1,171 @@
-# Wids2025-DeepLearningFromScratch
-Week 1: Foundations & Setup
+# WIDS 2025: Deep Learning From Scratch
 
-Week 1 focused on building the mathematical and coding foundations required for the project, along with an introduction to Kaggle-style machine learning workflows.
+A comprehensive course covering the mathematical foundations and implementation of deep learning models from first principles.
 
-🔹 Linear Algebra Intuition
+## Course Overview
 
-Importance of linear algebra in ML
+This course builds a complete understanding of deep learning by starting with mathematical fundamentals and progressively implementing neural networks without relying on high-level abstractions. Students will gain both theoretical knowledge and practical coding skills through hands-on projects and Kaggle-style competitions.
 
-Vectors as points and directions
+---
 
-Linear transformations and geometric meaning of matrices
+## Week 1: Mathematical Foundations & ML Workflows
 
-Resource: 3Blue1Brown Linear Algebra (focus on the first lesson)
+### Learning Objectives
 
-🔹 NumPy & PyTorch Basics
+Establish the mathematical and coding foundations required for the project, along with an introduction to Kaggle-style machine learning workflows.
 
-Introduction to PyTorch tensors and their relation to NumPy arrays
+### 🔹 Linear Algebra Intuition
 
-Tensor creation, shapes, indexing, and slicing
+- Importance of linear algebra in machine learning
+- Vectors as points and directions
+- Linear transformations and geometric meaning of matrices
 
-Basic operations and broadcasting
+**Resources:**
+- [3Blue1Brown Linear Algebra Series](https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab) (focus on the first lesson)
 
-🔹 Distance Computations
+### 🔹 NumPy & PyTorch Basics
 
-Efficient computation of distance matrices using NumPy
+- Introduction to PyTorch tensors and their relation to NumPy arrays
+- Tensor creation, shapes, indexing, and slicing
+- Basic operations and broadcasting
 
-Understanding vectorization vs Python loops
+### 🔹 Distance Computations
 
-Useful preparation for Kaggle-style problems
+- Efficient computation of distance matrices using NumPy
+- Understanding vectorization vs Python loops
+- Useful preparation for Kaggle-style problems
 
-🔹 Kaggle Introduction
+### 🔹 Kaggle Introduction
 
-Overview of Kaggle competitions and workflows
+- Overview of Kaggle competitions and workflows
+- Understanding datasets (train.csv, test.csv) and submissions
+- Explored the Titanic dataset as a first contest
 
-Understanding datasets (train.csv, test.csv) and submissions
+---
 
-Explored the Titanic dataset as a first contest
+## Week 2: Perceptrons & Neural Networks
 
-Week 2: Perceptrons & Neural Networks
+### Learning Objectives
 
-Week 2 focused on understanding how neural networks work from a mathematical perspective, starting from simple linear models.
+Understand how neural networks work from a mathematical perspective, starting from simple linear models and progressing to multi-layer architectures.
 
-🔹 Perceptron
+### 🔹 Perceptron
 
-Perceptron as a linear binary classifier
+- Perceptron as a linear binary classifier
+- Role of weights, bias, and activation functions
+- Learning a linear decision boundary
+- Limitations of linear models
 
-Role of weights, bias, and activation functions
+### 🔹 XOR Problem
 
-Learning a linear decision boundary
+- Why a single-layer perceptron fails on XOR
+- Motivation for multi-layer networks
+- Geometric intuition behind non-linear separability
 
-Limitations of linear models
+### 🔹 Neural Networks (MLPs)
 
-🔹 XOR Problem
+- Extending perceptrons to multi-layer neural networks
+- Role of hidden layers and non-linear activations
+- Learning complex decision boundaries
 
-Why a single-layer perceptron fails on XOR
+### 🔹 Backpropagation
 
-Motivation for multi-layer networks
+- Backpropagation as the core learning algorithm
+- Gradient computation using the chain rule
+- Weight and bias updates to minimize loss
+- Focus on mathematical understanding
 
-Geometric intuition behind non-linear separability
+### 🔹 Automatic Differentiation (Optional)
 
-🔹 Neural Networks (MLPs)
+- How modern frameworks compute gradients
+- Connection between backpropagation and computational graphs
 
-Extending perceptrons to multi-layer neural networks
+### 🔹 Interactive Learning
 
-Role of hidden layers and non-linear activations
+Used [TensorFlow Playground](https://playground.tensorflow.org) to visualize:
+- Network depth and width effects
+- Activation functions and their properties
+- Decision boundaries in different configurations
+- How network architecture affects learning behavior
 
-Learning complex decision boundaries
+---
 
-🔹 Backpropagation
+## Prerequisites
 
-Backpropagation as the core learning algorithm
+- Python 3.8+
+- NumPy
+- PyTorch
+- TensorFlow (for visualization with Playground)
 
-Gradient computation using the chain rule
+## Getting Started
 
-Weight and bias updates to minimize loss
+```bash
+# Clone the repository
+git clone https://github.com/yourusername/WIDS2025-DeepLearningFromScratch.git
+cd WIDS2025-DeepLearningFromScratch
 
-Focus on mathematical understanding
+# Install dependencies
+pip install numpy pytorch tensorflow
+```
 
-🔹 Automatic Differentiation (Optional)
+---
 
-How modern frameworks compute gradients
+## Project Structure
 
-Connection between backpropagation and computational graphs
+```
+WIDS2025-DeepLearningFromScratch/
+├── Week1/
+│   ├── LinearAlgebra/
+│   ├── NumPyPyTorch/
+│   ├── DistanceComputations/
+│   └── KaggleIntro/
+├── Week2/
+│   ├── Perceptron/
+│   ├── NeuralNetworks/
+│   └── Backpropagation/
+└── README.md
+```
 
-🔹 Interactive Learning
+---
 
-Used TensorFlow Playground to visualize:
+## Key Concepts
 
-Network depth
+| Concept | Week | Description |
+|---------|------|-------------|
+| Linear Algebra | 1 | Vectors, matrices, and transformations |
+| Vectorization | 1 | Efficient NumPy/PyTorch operations |
+| Distance Metrics | 1 | Euclidean and other distance computations |
+| Perceptron | 2 | Single-layer linear classifier |
+| Multi-layer Networks | 2 | MLPs with hidden layers |
+| Backpropagation | 2 | Gradient-based learning algorithm |
+| Activation Functions | 2 | Non-linear transformations in networks |
 
-Activation functions
+---
 
-Decision boundaries
+## Resources
 
-Observed how architecture affects learning behavior
+- **3Blue1Brown**: Linear Algebra Essentials
+- **TensorFlow Playground**: Interactive neural network visualization
+- **Kaggle**: Datasets and competition experience
+- **PyTorch Documentation**: https://pytorch.org/docs/stable/index.html
+- **NumPy Documentation**: https://numpy.org/doc/
+
+---
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit issues and enhancement requests.
+
+---
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+---
+
+## Acknowledgments
+
+- 3Blue1Brown for exceptional mathematical intuition videos
+- Kaggle for providing datasets and competition platform
+- TensorFlow team for the interactive Playground tool
