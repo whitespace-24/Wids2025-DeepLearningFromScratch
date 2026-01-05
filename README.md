@@ -1,6 +1,59 @@
 # Wids2025-DeepLearningFromScratch
-WEEK 1:
-Week1 was about introduction to python and libraries like numpy, pandas etc. It also had a kaggle-contest to test the understandin
+Week 1: Foundations & Tooling Setup
+
+Week 1 focused on building the mathematical intuition and tooling familiarity required for the project, along with an introduction to Kaggle-style machine learning workflows.
+
+🔹 Linear Algebra Refresher
+
+Emphasized the importance of linear algebra intuition for understanding machine learning models.
+
+Covered core ideas such as:
+
+Vectors as points and directions
+
+Linear transformations
+
+Geometric interpretation of matrix operations
+
+Recommended the 3Blue1Brown linear algebra series, with focus on the first lesson.
+
+🔹 NumPy & PyTorch Basics
+
+Introduced PyTorch tensors as the fundamental data structure for deep learning.
+
+Learned how tensors relate to NumPy arrays and how they differ.
+
+Focused on:
+
+Tensor creation and shapes
+
+Basic operations and broadcasting
+
+Indexing and slicing
+
+🔹 Distance Computations with NumPy
+
+Studied efficient computation of distance matrices using NumPy.
+
+Learned how vectorization avoids slow Python loops.
+
+Built intuition for how mathematical expressions translate into fast numerical code.
+
+This directly prepares participants for the upcoming Kaggle contest tasks.
+
+🔹 Kaggle Introduction
+
+Introduced Kaggle competitions as a practical ML workflow.
+
+Explored:
+
+Dataset structure (train.csv, test.csv)
+
+Submission format
+
+Public vs private leaderboard
+
+Used the Titanic dataset to understand how ML contests work end-to-end.
 
 Week 2: Perceptrons & Neural Networks (Mathematical Foundations)
 
