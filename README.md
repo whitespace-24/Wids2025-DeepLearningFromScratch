@@ -12,9 +12,6 @@ Establish the mathematical and coding foundations required for the project, alon
 - Vectors as points and directions
 - Linear transformations and geometric meaning of matrices
 
-**Resources:**
-- [3Blue1Brown Linear Algebra Series](https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab) 
-
 ### 🔹 NumPy & Pytorch Basics
 
 - Introduction to PyTorch tensors and their relation to NumPy arrays
@@ -35,7 +32,7 @@ Establish the mathematical and coding foundations required for the project, alon
 
 ---
 
-## Week 2: Perceptrons & Neural Networks
+## Week 2: 
 
 ### 🔹 Perceptron
 
@@ -63,20 +60,7 @@ Establish the mathematical and coding foundations required for the project, alon
 - Weight and bias updates to minimize loss
 - Focus on mathematical understanding
 
-### 🔹 Automatic Differentiation (Optional)
-
-- How modern frameworks compute gradients
-- Connection between backpropagation and computational graphs
-
 ---
-
-## Resources
-
-- **3Blue1Brown**: Linear Algebra Essentials
-- **TensorFlow Playground**: Interactive neural network visualization
-- **Kaggle**: Datasets and competition experience
-- **PyTorch Documentation**: https://pytorch.org/docs/stable/index.html
-- **NumPy Documentation**: https://numpy.org/doc/
-
+I have attached the coding part of week 1. Few datasets have not been uploaded due to size limit of github. No coding was done in week 2 as it focussed on theorotical part of ml. Though it involved some interactive learning.
 ---
 
