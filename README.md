@@ -1,113 +1,91 @@
 # Wids2025-DeepLearningFromScratch
-Week 1: Foundations & Tooling Setup
+Week 1: Foundations & Setup
 
-Week 1 focused on building the mathematical intuition and tooling familiarity required for the project, along with an introduction to Kaggle-style machine learning workflows.
+Week 1 focused on building the mathematical and coding foundations required for the project, along with an introduction to Kaggle-style machine learning workflows.
 
-🔹 Linear Algebra Refresher
+🔹 Linear Algebra Intuition
 
-Emphasized the importance of linear algebra intuition for understanding machine learning models.
-
-Covered core ideas such as:
+Importance of linear algebra in ML
 
 Vectors as points and directions
 
-Linear transformations
+Linear transformations and geometric meaning of matrices
 
-Geometric interpretation of matrix operations
-
-Recommended the 3Blue1Brown linear algebra series, with focus on the first lesson.
+Resource: 3Blue1Brown Linear Algebra (focus on the first lesson)
 
 🔹 NumPy & PyTorch Basics
 
-Introduced PyTorch tensors as the fundamental data structure for deep learning.
+Introduction to PyTorch tensors and their relation to NumPy arrays
 
-Learned how tensors relate to NumPy arrays and how they differ.
-
-Focused on:
-
-Tensor creation and shapes
+Tensor creation, shapes, indexing, and slicing
 
 Basic operations and broadcasting
 
-Indexing and slicing
+🔹 Distance Computations
 
-🔹 Distance Computations with NumPy
+Efficient computation of distance matrices using NumPy
 
-Studied efficient computation of distance matrices using NumPy.
+Understanding vectorization vs Python loops
 
-Learned how vectorization avoids slow Python loops.
-
-Built intuition for how mathematical expressions translate into fast numerical code.
-
-This directly prepares participants for the upcoming Kaggle contest tasks.
+Useful preparation for Kaggle-style problems
 
 🔹 Kaggle Introduction
 
-Introduced Kaggle competitions as a practical ML workflow.
+Overview of Kaggle competitions and workflows
 
-Explored:
+Understanding datasets (train.csv, test.csv) and submissions
 
-Dataset structure (train.csv, test.csv)
+Explored the Titanic dataset as a first contest
 
-Submission format
+Week 2: Perceptrons & Neural Networks
 
-Public vs private leaderboard
-
-Used the Titanic dataset to understand how ML contests work end-to-end.
-
-Week 2: Perceptrons & Neural Networks (Mathematical Foundations)
-
-In Week 2, we focused on building a mathematical understanding of perceptrons and neural networks, starting from simple linear classifiers and gradually motivating deeper architectures and learning algorithms.
+Week 2 focused on understanding how neural networks work from a mathematical perspective, starting from simple linear models.
 
 🔹 Perceptron
 
-Introduced the perceptron as a basic linear binary classifier.
+Perceptron as a linear binary classifier
 
-Understood how inputs, weights, bias, and activation function work together.
+Role of weights, bias, and activation functions
 
-Interpreted the perceptron as learning a linear decision boundary in feature space.
+Learning a linear decision boundary
 
-Discussed the limitations of perceptrons, especially their inability to solve non-linearly separable problems.
+Limitations of linear models
 
 🔹 XOR Problem
 
-Studied the XOR problem as a classic example where a single-layer perceptron fails.
+Why a single-layer perceptron fails on XOR
 
-Used XOR to motivate the need for multiple layers and non-linear transformations.
+Motivation for multi-layer networks
 
-Gained geometric intuition behind why XOR cannot be separated by a single line.
+Geometric intuition behind non-linear separability
 
-🔹 Neural Networks (Multi-Layer Perceptrons)
+🔹 Neural Networks (MLPs)
 
-Extended perceptrons to multi-layer neural networks.
+Extending perceptrons to multi-layer neural networks
 
-Understood the role of:
+Role of hidden layers and non-linear activations
 
-Hidden layers
-
-Non-linear activation functions
-
-Saw how stacking layers enables learning complex, non-linear decision boundaries.
+Learning complex decision boundaries
 
 🔹 Backpropagation
 
-Introduced backpropagation as the core learning algorithm for neural networks.
+Backpropagation as the core learning algorithm
 
-Studied how gradients are computed using the chain rule.
+Gradient computation using the chain rule
 
-Understood how weights and biases are updated to minimize loss.
+Weight and bias updates to minimize loss
 
-Emphasis was placed on the mathematical derivation, not just implementation.
+Focus on mathematical understanding
 
 🔹 Automatic Differentiation (Optional)
 
-Explored how modern ML libraries compute gradients efficiently using computational graphs and automatic differentiation.
+How modern frameworks compute gradients
 
-Connected the theory of backpropagation to how frameworks like TensorFlow and PyTorch work internally.
+Connection between backpropagation and computational graphs
 
-🔹 Interactive Exploration
+🔹 Interactive Learning
 
-Used TensorFlow Playground to visually experiment with:
+Used TensorFlow Playground to visualize:
 
 Network depth
 
@@ -115,4 +93,4 @@ Activation functions
 
 Decision boundaries
 
-Observed how architectural changes affect learning behavior.
+Observed how architecture affects learning behavior
