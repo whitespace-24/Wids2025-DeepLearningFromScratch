@@ -39,15 +39,89 @@ This week focuses on understanding the theoretical foundations and practical bui
 
 ---
 
-### **Week 3**
+### **Week 3: Transitioning to Image Data with CNNs**
 
-Continuation of deep learning fundamentals (content details to be expanded based on assignments).
+In this week, the repository explores Convolutional Neural Networks (CNNs), specifically optimized for computer vision tasks like digit recognition.
+
+Context: Similar to the previous K-Nearest Neighbors (KNN) implementation, this project utilizes the MNIST dataset (a collection of 70,000 handwritten digits).
+Pre-processing: Images are treated as 28×28 pixel grids. Unlike basic DNNs that flatten these into vectors, the CNN approach preserves the spatial 2D structure of the digits.
+
+Key CNN Components Implemented: 
+To understand how the code handles spatial features, we focus on three core concepts: Convolutional Layers (Conv2D): Instead of fully-connected weights, these layers use Filters (Kernels) that slide across the image. This allows the model to learn local patterns (edges, loops, and curves) using Parameter Sharing, which significantly reduces the number of trained variables.
+
+Pooling Layers (MaxPool): These layers perform downsampling (typically taking the maximum value in a 2×2 window) to reduce the computational load and make the feature detection invariant to small shifts or distortions in the handwriting.
+
+This directory includes SimpleCNN_MNIST.ipynb, a practical implementation of a Convolutional Neural Network using the PyTorch framework on MNSIT dataset. 
 
 ---
 
 ### **Project (Week 4 & 5)**
 
-Capstone project applying concepts from weeks 1-3 to solve a real-world deep learning problem.
+This project implements a Convolutional Neural Network (CNN) for MNIST digit classification, where the core convolution and pooling operations are implemented from scratch, instead of using PyTorch’s built-in nn.Conv2d and nn.MaxPool2d.
+
+📂 File Descriptions
+
+*conv2d_from_scratch.py*
+
+This file implements a custom 2D convolution layer.
+
+Defines the class Conv2DFromScratch, which behaves similarly to nn.Conv2d
+
+Manually performs convolution using nested loops over:
+
+batch dimension
+
+output channels (filters)
+
+spatial height and width
+
+Supports:  multiple input/output channels
+
+configurable kernel size, stride, and padding
+
+Stores convolution kernels (weight) and bias (bias) as trainable parameters
+
+Uses explicit region-wise multiplication and summation to compute feature maps
+
+*maxpool2d_from_scratch.py*
+
+This file implements a custom 2D max-pooling layer.
+
+Defines the class MaxPool2DFromScratch
+
+Applies spatial down-sampling by:
+
+sliding a window over the input feature map
+
+selecting the maximum value in each window
+
+Supports configurable kernel size and stride
+
+Implemented using explicit loops to make the pooling operation transparent
+
+*CNN_MNIST_From_Scratch.ipynb*
+
+This notebook ties everything together and performs training and evaluation on the MNIST dataset.
+
+Loads the MNIST dataset using torchvision
+
+Defines a CNN architecture using:
+
+Conv2DFromScratch
+
+MaxPool2DFromScratch
+
+ReLU activation
+
+Fully connected layers
+
+Trains the model using:
+
+Cross-entropy loss
+
+Adam optimizer
+
+Evaluates classification performance on test data
 
 ---
 
@@ -67,8 +141,8 @@ git clone https://github.com/whitespace-24/Wids2025-DeepLearningFromScratch.git
 # Navigate to repository
 cd Wids2025-DeepLearningFromScratch
 
-# Install required packages (if requirements.txt exists)
-pip install -r requirements.txt
+# Install required packages into virtualenv
+
 ```
 
 ### Running Notebooks
@@ -76,37 +150,6 @@ pip install -r requirements.txt
 jupyter notebook
 # Open and run notebooks from the respective week folders
 ```
-
----
-
-## 📊 Learning Objectives
-
-By completing this course, you will understand:
-
-1. How linear algebra forms the backbone of machine learning
-2. Efficient numerical computation using NumPy and PyTorch
-3. How perceptrons and neural networks learn from data
-4. The mechanics of backpropagation and gradient descent
-5. How to structure machine learning workflows on Kaggle
-6. Practical deep learning implementation from first principles
-
----
-
-## 💡 Key Highlights
-
-- **From Scratch Approach**: Build understanding from mathematical foundations
-- **Hands-On Coding**: Jupyter notebooks with interactive examples
-- **Real-World Application**: Kaggle competition problems and workflows
-- **Progressive Complexity**: From simple perceptrons to multi-layer networks
-- **Mathematical Rigor**: Strong focus on understanding the "why" behind algorithms
-
----
-
-## 📝 Notes
-
-- Code implementations focus on educational clarity over optimization
-- Datasets larger than GitHub's limits are excluded; instructions for downloading are provided
-- Week 2 emphasizes theory with interactive learning; coding projects begin in Week 3
 
 ---
 
@@ -122,17 +165,6 @@ By completing this course, you will understand:
 
 Created as part of the WIDS 2025 program by whitespace-24
 
----
-
-## 📄 License
-
-This project is open source and available under the MIT License (or as specified by the author).
-
----
-
-## 🤝 Contributing
-
-Contributions are welcome! Feel free to submit issues or pull requests to improve the educational content.
 
 ---
 
