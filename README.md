@@ -38,60 +38,117 @@ This week focuses on understanding the theoretical foundations and practical bui
 **Note**: Week 2 focused on theoretical learning with interactive materials. No formal coding assignments were completed, but conceptual understanding is emphasized.
 
 ---
+🗓️ Week 3: Transitioning to Image Data with CNNs
 
-📂 Week 3: CNN Fundamentals with PyTorch
+In this week, the repository explores Convolutional Neural Networks (CNNs), which are specifically optimized for computer vision tasks such as handwritten digit recognition.
 
-In this phase, we explore the power of CNNs for computer vision, focusing on preserving the spatial relationship of pixels.
+📌 Context
 
-    Dataset: Utilizes the MNIST dataset, a collection of 70,000 handwritten digits.
+Similar to the previous K-Nearest Neighbors (KNN) implementation, this project uses the MNIST dataset, consisting of 70,000 handwritten digit images (28×28 pixels).
 
-    Spatial Awareness: Unlike standard DNNs that flatten images, our CNN treats images as 28×28 pixel grids to preserve 2D structure.
+🧠 Pre-processing
 
-    Core Concepts Implemented:
+Images are treated as 2D grids (28×28 pixels) rather than flattened vectors.
 
-        Convolutional Layers (Conv2D): Uses filters (kernels) to learn local patterns like edges and curves through Parameter Sharing.
+Unlike basic Deep Neural Networks (DNNs), CNNs preserve spatial structure, enabling the model to learn meaningful local patterns such as edges, curves, and shapes.
 
-        Pooling Layers (MaxPool): Performs downsampling (typically 2×2) to reduce computational load and create invariance to small distortions.
+🔑 Key CNN Components Implemented
 
-🚀 Featured File: SimpleCNN_MNIST.ipynb
+To understand how spatial features are captured, the following core CNN concepts are emphasized:
 
-A practical implementation of a CNN using the PyTorch framework to establish a performance baseline on the MNIST dataset.
-🛠️ Weeks 4 & 5: CNN Architecture From Scratch
+🔹 Convolutional Layers (Conv2D)
 
-The core of this project involves deconstructing the convolution and pooling operations. We implement these layers manually to understand the underlying mathematics, bypassing PyTorch’s built-in nn.Conv2d and nn.MaxPool2d.
+Use filters (kernels) that slide across the image instead of fully connected weights
+
+Learn local patterns such as edges, loops, and curves
+
+Employ parameter sharing, significantly reducing the number of trainable parameters
+
+Preserve spatial relationships within the image
+
+🔹 Pooling Layers (MaxPool)
+
+Perform down-sampling by selecting the maximum value in local windows (e.g., 2×2)
+
+Reduce computational complexity
+
+Introduce translation invariance, making feature detection robust to small shifts or distortions
+
+📘 Implementation (Week 3)
+
+SimpleCNN_MNIST.ipynb
+A practical implementation of a CNN using the PyTorch framework on the MNIST dataset, demonstrating standard convolution and pooling layers.
+
+🚀 Project (Weeks 4 & 5): CNN from Scratch
+
+This project extends the CNN implementation by manually implementing convolution and pooling operations from scratch, without using PyTorch’s built-in nn.Conv2d and nn.MaxPool2d layers.
+
+The objective is to gain a deeper understanding of the internal mechanics of CNNs while still leveraging PyTorch for automatic differentiation and optimization.
+
 📂 File Descriptions
-1. conv2d_from_scratch.py
+conv2d_from_scratch.py
 
-This file defines the Conv2DFromScratch class, mimicking the behavior of standard layers through manual computation.
+Implements a custom 2D convolution layer.
 
-    Manual Convolution: Implements the operation using nested loops over the batch, output channels, and spatial dimensions.
+Defines the class Conv2DFromScratch, functionally similar to nn.Conv2d
 
-    Features: Supports multiple input/output channels, configurable kernel size, stride, and padding.
+Manually performs convolution using explicit nested loops over:
 
-    Trainable Parameters: Manually manages convolution kernels (weights) and biases.
+Batch dimension
 
-    Logic: Uses explicit region-wise multiplication and summation to generate feature maps.
+Output channels (filters)
 
-2. maxpool2d_from_scratch.py
+Spatial height and width
 
-Defines the MaxPool2DFromScratch class for spatial downsampling.
+Supports:
 
-    Operation: Slides a window over the input feature map and selects the maximum value.
+Multiple input and output channels
 
-    Transparency: Implemented with explicit loops to make the pooling operation fully transparent.
+Configurable kernel size, stride, and padding
 
-    Configurability: Supports custom kernel sizes and strides.
+Stores convolution kernels (weight) and biases (bias) as trainable parameters
 
-3. CNN_MNIST_From_Scratch.ipynb
+Computes feature maps via region-wise multiplication and summation
 
-The master notebook that integrates our custom-built layers for full-scale training and evaluation.
+maxpool2d_from_scratch.py
 
-    Architecture: Combines Conv2DFromScratch, MaxPool2DFromScratch, ReLU activations, and fully connected layers.
+Implements a custom 2D max-pooling layer.
 
-    Training: Optimized using Adam and Cross-entropy loss.
+Defines the class MaxPool2DFromScratch
 
-    Workflow: Loads MNIST via torchvision, trains the custom model, and evaluates classification performance on test data.
-## 🚀 Getting Started
+Applies spatial down-sampling by:
+
+Sliding a window across the feature map
+
+Selecting the maximum value within each window
+
+Supports configurable kernel size and stride
+
+Implemented using explicit loops for full transparency of the pooling operation
+
+CNN_MNIST_From_Scratch.ipynb
+
+Integrates all components and performs training and evaluation on the MNIST dataset.
+
+Loads the MNIST dataset using torchvision
+
+Defines a CNN architecture composed of:
+
+Conv2DFromScratch
+
+MaxPool2DFromScratch
+
+ReLU activation functions
+
+Fully connected layers
+
+Trains the network using:
+
+Cross-entropy loss
+
+Adam optimizer
+
+Evaluates classification accuracy on the test dataset
 
 ### Prerequisites
 - Python 3.7+
