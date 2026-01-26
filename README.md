@@ -124,11 +124,15 @@ Integrates all components and performs training and evaluation on the MNIST data
   - Adam optimizer
 - Evaluates classification accuracy on the test dataset
 
+---
+
 ### Prerequisites
 - Python 3.7+
 - NumPy
 - PyTorch
 - Jupyter Notebook
+
+---
 
 ### Installation
 ```bash
@@ -141,6 +145,8 @@ cd Wids2025-DeepLearningFromScratch
 # Install required packages into virtualenv
 
 ```
+
+---
 
 ### Running Notebooks
 ```bash
