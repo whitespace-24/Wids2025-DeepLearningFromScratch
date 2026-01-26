@@ -39,92 +39,58 @@ This week focuses on understanding the theoretical foundations and practical bui
 
 ---
 
-### **Week 3: Transitioning to Image Data with CNNs**
+📂 Week 3: CNN Fundamentals with PyTorch
 
-In this week, the repository explores Convolutional Neural Networks (CNNs), specifically optimized for computer vision tasks like digit recognition.
+In this phase, we explore the power of CNNs for computer vision, focusing on preserving the spatial relationship of pixels.
 
-Context: Similar to the previous K-Nearest Neighbors (KNN) implementation, this project utilizes the MNIST dataset (a collection of 70,000 handwritten digits).
-Pre-processing: Images are treated as 28×28 pixel grids. Unlike basic DNNs that flatten these into vectors, the CNN approach preserves the spatial 2D structure of the digits.
+    Dataset: Utilizes the MNIST dataset, a collection of 70,000 handwritten digits.
 
-Key CNN Components Implemented: 
-To understand how the code handles spatial features, we focus on three core concepts: Convolutional Layers (Conv2D): Instead of fully-connected weights, these layers use Filters (Kernels) that slide across the image. This allows the model to learn local patterns (edges, loops, and curves) using Parameter Sharing, which significantly reduces the number of trained variables.
+    Spatial Awareness: Unlike standard DNNs that flatten images, our CNN treats images as 28×28 pixel grids to preserve 2D structure.
 
-Pooling Layers (MaxPool): These layers perform downsampling (typically taking the maximum value in a 2×2 window) to reduce the computational load and make the feature detection invariant to small shifts or distortions in the handwriting.
+    Core Concepts Implemented:
 
-This directory includes SimpleCNN_MNIST.ipynb, a practical implementation of a Convolutional Neural Network using the PyTorch framework on MNSIT dataset. 
+        Convolutional Layers (Conv2D): Uses filters (kernels) to learn local patterns like edges and curves through Parameter Sharing.
 
----
+        Pooling Layers (MaxPool): Performs downsampling (typically 2×2) to reduce computational load and create invariance to small distortions.
 
-### **Project (Week 4 & 5)**
+🚀 Featured File: SimpleCNN_MNIST.ipynb
 
-This project implements a Convolutional Neural Network (CNN) for MNIST digit classification, where the core convolution and pooling operations are implemented from scratch, instead of using PyTorch’s built-in nn.Conv2d and nn.MaxPool2d.
+A practical implementation of a CNN using the PyTorch framework to establish a performance baseline on the MNIST dataset.
+🛠️ Weeks 4 & 5: CNN Architecture From Scratch
 
+The core of this project involves deconstructing the convolution and pooling operations. We implement these layers manually to understand the underlying mathematics, bypassing PyTorch’s built-in nn.Conv2d and nn.MaxPool2d.
 📂 File Descriptions
+1. conv2d_from_scratch.py
 
-*conv2d_from_scratch.py*
+This file defines the Conv2DFromScratch class, mimicking the behavior of standard layers through manual computation.
 
-This file implements a custom 2D convolution layer.
+    Manual Convolution: Implements the operation using nested loops over the batch, output channels, and spatial dimensions.
 
-Defines the class Conv2DFromScratch, which behaves similarly to nn.Conv2d
+    Features: Supports multiple input/output channels, configurable kernel size, stride, and padding.
 
-Manually performs convolution using nested loops over:
+    Trainable Parameters: Manually manages convolution kernels (weights) and biases.
 
-batch dimension
+    Logic: Uses explicit region-wise multiplication and summation to generate feature maps.
 
-output channels (filters)
+2. maxpool2d_from_scratch.py
 
-spatial height and width
+Defines the MaxPool2DFromScratch class for spatial downsampling.
 
-Supports:  multiple input/output channels
+    Operation: Slides a window over the input feature map and selects the maximum value.
 
-configurable kernel size, stride, and padding
+    Transparency: Implemented with explicit loops to make the pooling operation fully transparent.
 
-Stores convolution kernels (weight) and bias (bias) as trainable parameters
+    Configurability: Supports custom kernel sizes and strides.
 
-Uses explicit region-wise multiplication and summation to compute feature maps
+3. CNN_MNIST_From_Scratch.ipynb
 
-*maxpool2d_from_scratch.py*
+The master notebook that integrates our custom-built layers for full-scale training and evaluation.
 
-This file implements a custom 2D max-pooling layer.
+    Architecture: Combines Conv2DFromScratch, MaxPool2DFromScratch, ReLU activations, and fully connected layers.
 
-Defines the class MaxPool2DFromScratch
+    Training: Optimized using Adam and Cross-entropy loss.
 
-Applies spatial down-sampling by:
-
-sliding a window over the input feature map
-
-selecting the maximum value in each window
-
-Supports configurable kernel size and stride
-
-Implemented using explicit loops to make the pooling operation transparent
-
-*CNN_MNIST_From_Scratch.ipynb*
-
-This notebook ties everything together and performs training and evaluation on the MNIST dataset.
-
-Loads the MNIST dataset using torchvision
-
-Defines a CNN architecture using:
-
-Conv2DFromScratch
-
-MaxPool2DFromScratch
-
-ReLU activation
-
-Fully connected layers
-
-Trains the model using:
-
-Cross-entropy loss
-
-Adam optimizer
-
-Evaluates classification performance on test data
-
----
-
+    Workflow: Loads MNIST via torchvision, trains the custom model, and evaluates classification performance on test data.
 ## 🚀 Getting Started
 
 ### Prerequisites
